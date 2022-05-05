@@ -142,8 +142,8 @@ const patchStateFunFact = async (req, res) => {
     if (!req.body.index) {
         return res.status(400).json({ message: `State fun fact index value required` });
     }
-    if (!req.body.funfact) {
-        return res.status(400).json({ message: `State fun fact value required` });
+    if (!req.body.funfact || typeof req.body.funfact !== "string") {
+        return res.status(400).json({ message: `State fun fact string value required` });
     }
 
     const stateMongo = await statesDB.findOne({ stateCode: req.params.state.toUpperCase() }).exec();
