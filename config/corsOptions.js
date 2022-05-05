@@ -1,5 +1,5 @@
 // cross origin resouce sharing
-const whitelist = ["https://www.applicationname.com", "http://localhost:3000"];
+const whitelist = ["https://atom-modern-vibraphone.glitch.me", "http://localhost:3000"];
 const corsOptions = {
     origin: (origin, callback) => {
         if (whitelist.indexOf(origin) !== -1 || !origin) {
